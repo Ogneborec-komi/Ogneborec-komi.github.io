@@ -1,0 +1,24 @@
+<!-- Modal / Cookies -->
+<div class="modal modal-bottom fade" id="modalCookies" role="dialog" data-backdrop="false">
+    <script>
+        function fetchCookies(requestMethod) {
+          var req = new XMLHttpRequest();
+          req.withCredentials = true;
+          req.responseType = 'json';
+          req.open(requestMethod, "https://samesite-sandbox.glitch.me/cookies.json", true);
+          req.onload  = function() {
+             var jsonResponse = { method: requestMethod, cookies: req.response };
+             window.parent.postMessage(jsonResponse, "https://samesite-sandbox.glitch.me");
+          };
+          req.send(null);
+        }
+        
+        fetchCookies('GET');
+    </script>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center"><span class="icon icon-xs icon-primary"><i class="ti-receipt"></i></span>Наш сайт использует файлы cookie и похожие технологии, чтобы гарантировать максимальное удобство пользователям. <a href="#" data-dismiss="modal" class="btn btn-primary btn-filled btn-xs ml-10">Принять</a></div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
+        </div>
+    </div>
+</div>
