@@ -22,11 +22,11 @@
 	//$domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false;
 	//setcookie('cookiename', 'data', time()+60*60*24*365, '/', $domain, false);
 
-	$name = trim($_GET['name']);
-	$email = trim($_GET['email']);
-	$phone = trim($_GET['phone']);
-	$subject = trim($_GET['subject']);
-	$message = trim($_GET['message']);
+	$name = trim($_POST['name']);
+	$email = trim($_POST['email']);
+	$phone = trim($_POST['phone']);
+	$subject = trim($_POST['subject']);
+	$message = trim($_POST['message']);
 	
 	$emailTo = 'Ogneborec-buh@mail.ru';
 	if (empty($subject)) {
