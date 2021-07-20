@@ -128,6 +128,16 @@
 						<div class="form-group">
 							<textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Собщение" required></textarea>
 						</div>
+						<div class="form-file">
+							<div class="form-group col-sm-6">
+								<input type="file" name="sendFile" id="sendFile" class="form-control" placegolder="Файл" accept=".pdf, .doc, .docx">
+								<small>Разрешенные форматы: .pdf, .doc, .docx</small>
+							</div>
+						</div>
+						<div class="form-group">
+							<input name="privacy_policy" class="form-control" id="privacy" required data-msg-required="Это поле обязательно" value="yes" aria-required="true" type="checkbox">
+							<label for="privacy_policy">Используюя эту форму Вы соглашаетесь с обработкой и хранением Ваших персональных данных владельцами сайта.</label>
+						</div>
 						<div class="row">
 							<div class="col-md-4 col-sm-6">
 								<button type="submit" class="btn btn-filled btn-submit btn-block"><span>Отправить<i class="i-after ti-arrow-right"></i></span></button>
