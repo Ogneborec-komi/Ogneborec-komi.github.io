@@ -27,14 +27,16 @@
 	$phone = trim($_POST['phone']);
 	$subject = trim($_POST['subject']);
 	$message = trim($_POST['message']);
+	$file = trim($_POST['sendFile']);
+	$privacy = trim($_POST['privacy_policy'])
 	
 	$emailTo = 'Ogneborec-buh@mail.ru';
 	if (empty($subject)) {
 	    $subject = 'Сообщение с сайта ООО "Огнеборец".';
 	}
-	$body = "Name: $name \n\nEmail: $email \n\nPhone: $phone \n\nMessage:\n$message";
-	$headers = 'From: '.$email."\r\n" .
-        'Reply-To: '.$email."\r\n";
+	$body = "ФИО: $name \n\nEmail: $email \n\nТелефон: $phone \n\nСообшение:\n$message \n\nПриложение: $file \n\nОбработка данных: $privacy";
+	$headers = 'От: '.$email."\r\n" .
+        'Ответить: '.$email."\r\n";
 
 	mail($emailTo, $subject, $body, $headers);
 	$emailSent = true;
